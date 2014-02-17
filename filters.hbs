@@ -1,0 +1,9 @@
+<div class="webkite-applied-filters clearfix">
+  <div class="label">filters</div>
+  <div class="current-filters">
+  {{#each currentFilters}}
+    <a href="#" class="webkite-remove-filter" data-facet="{{this.facet}}" data-operator="{{this.operator}}" data-value="{{this.value}}">{{this.value}} &#10761</a>
+  {{/each}}
+  <a href="#" class="webkite-clear-filters">&#8855</a>
+  </div>
+</div>
