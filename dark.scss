@@ -1,0 +1,361 @@
+@import 'webfonts';
+
+@import 'dark-palette';
+
+$shadowOpacity: rgba(0,0,0,.2);
+$linkColor: #1b9cd2;
+$linkHover: #0073a7;
+
+//TOKEN COLORS
+$tokenFirst: $linkColor;
+$tokenSecond: #39a17c;
+$tokenThird: #a8936f;
+$tokenFourth: #e6af52;
+$tokenFifth: #6f7ca8;
+
+//SIZES
+$mainGutter: 1.25em;
+
+//MIXINS
+@mixin roundedUp($radius){
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  -ms-border-radius: $radius;
+  -o-border-radius: $radius;
+  border-radius: $radius;
+  }
+@mixin boxedUp{
+  -webkit-box-sizing:border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  }
+@mixin shadowHere{
+  -webkit-box-shadow: 0 .125em .313em $shadowOpacity;
+  -moz-box-shadow: 0 .125em .313em $shadowOpacity;
+  box-shadow: 0 .125em .313em $shadowOpacity;
+  }
+@mixin breakThat{
+  &:after{
+    content: '';
+    display: inline-block;
+    width: 100%;
+    height: 0;margin: 0;padding: 0; white-space: pre-line;
+    }
+  }
+  
+@include web-font((Open Sans) (300,400,400i,700,700i));
+
+/* RESET */
+#webkite-results{
+  @import 'reset';
+  }
+
+/****************************************** BEGIN STYLES */
+#webkite-results{
+  background: $backgroundColor;
+  border: 1px solid $lighterOpacity;
+  @include roundedUp(.625em);
+  @include boxedUp;
+  max-width: 43.750em;
+  margin: 0 auto;
+  padding: $mainGutter;
+  font-family:"Open Sans";
+  font-size: 16px;
+  a{color:$linkColor;
+      text-decoration: none; 
+    &:hover{color: $linkHover;}
+    }
+  }
+  
+/* TYPOGRAPHY */
+#webkite-results{
+  h1, h2{
+    margin: 0;
+    }
+  h1{
+    font: 300 2.25em/1 "Open Sans";
+    color: $highOpacity;
+    margin-bottom: $mainGutter/2;
+    }
+  h2{
+    font: 700 1.5em/1 "Open Sans";
+    color: $medOpacity;
+    }
+  p, li{
+    color: $lightOpacity;
+    }
+  }
+
+/******************************************** NAVIGATIONALS */
+#webkite-results{
+
+  .webkite-results-header, .webkite-results-footer{
+    text-align: justify;
+    position: relative;
+    h1{text-align: left;}
+    @include breakThat;
+    .webkite-title-area, .webkite-sort-area, .webkite-filter-area, .webkite-branding-area, .webkite-pagination-area{
+      display: inline-block;
+      vertical-align:top;
+      }
+    /* dark theme only */
+    .webkite-branding-area a {
+      background: url("branding-dark.svg") center top no-repeat;
+      display: inline-block;
+      height: 2.813em;
+      width: 8.5em;
+      }
+    }
+  .webkite-results-footer{
+    height: 2.813em;
+    }
+    
+  } 
+/************************************************* SORTS */
+#webkite-results{
+
+  select.webkite-sort{
+    @include boxedUp;
+    @include roundedUp(.188em);
+    -webkit-appearance: none;
+    background: $lightestOpacity;
+    color: $lightOpacity;
+    border: 1px solid $lighterOpacity;
+    font-size: 0.875em;
+    font-weight: 700;
+    margin: 0;
+    padding: 0 $mainGutter/4;
+    width: 5.5em;
+    -moz-appearance: none;
+    text-indent: 0.01px;
+    text-overflow: '';
+    height: 2em;
+    line-height: 1em;
+    }  
+  div.webkite-sort{
+    position: relative;
+    z-index: 2;
+    &:after{
+      content: "\25BE";
+      color: $lightOpacity;
+      display:block;
+      opacity: .5;
+      position: absolute;
+      right: $mainGutter/4;
+      top:10%;
+      pointer-events: none;
+      }
+    }
+  
+  }
+
+/************************************************ FILTERS */
+#webkite-results{
+
+  .webkite-filter-area{
+    @include boxedUp;
+    width: 100%;
+    position: relative;
+    padding-left: 5.5em;
+    margin-left: -5.5em;
+    }
+  .webkite-applied-filters{
+    position: relative; 
+    }
+  .current-filters{
+    @include roundedUp(.188em);
+    @include boxedUp;
+    background: white;
+    border: 1px solid $lighterOpacity;
+    display: inline-block;
+    height: 1.75em;
+    padding: $mainGutter/4;
+    padding-left: 4.2em;
+    width: 100%;
+    text-align: end;
+    /* and & or */
+    span{
+      color: $lightOpacity;
+      float: left;
+      font-size: .875em;
+      line-height: 1.2em;
+      margin: 0 $mainGutter/4;
+      }
+    }
+  .webkite-applied-filters > a{
+    display: inline-block;
+    position: absolute;
+    z-index: 2;
+    left: 0;
+    @include boxedUp;
+    @include roundedUp(.188em 0 0 .188em);
+    background: $lightestOpacity;
+    border: 1px solid $lightestOpacity;
+    border-right: 1px solid $lighterOpacity;
+    color: $lightOpacity;
+    font-size: 0.875em;
+    font-weight: 700;
+    line-height: 1.9em;
+    padding: 0 $mainGutter/4 0 $mainGutter/4;
+    height: 2em;
+    } 
+  .webkite-applied-filters > a b{
+    font-size: .8em;
+    opacity: .5;
+    pointer-events: none;
+    }
+  /* tokens */
+  a.webkite-remove-filter{
+    @include roundedUp (.188em);
+    color: white;
+    float:left;
+    font-size: 0.875em;
+    line-height: 1em;
+    padding: $mainGutter/20 $mainGutter/4;
+    &:hover{text-decoration: line-through;}
+    }
+  .filter-group-0 a.webkite-remove-filter{
+    background: $tokenFirst;
+    }
+  .filter-group-1 a.webkite-remove-filter{
+    background: $tokenSecond;
+    }
+  .filter-group-2 a.webkite-remove-filter{
+    background: $tokenThird;
+    }
+  .filter-group-3 a.webkite-remove-filter{
+    background: $tokenFourth;
+    }
+  .filter-group-4 a.webkite-remove-filter{
+    background: $tokenFifth;
+    }
+  /* clear everything */ 
+  a.webkite-clear-filters{
+    background: $linkColor;
+    color: white;
+    font-size: .5em;
+    font-weight: 700;
+    line-height: 1.7em;
+    vertical-align: text-top;
+    padding: .125em .65em .375em .65em;
+    @include roundedUp (50%);
+    }
+  
+  }
+/**************************************** FILTER DROPDOWN */
+#webkite-results{
+
+  .filter-menu{
+    margin: 0;
+    @include roundedUp(.375em);
+    @include shadowHere;
+    -webkit-padding-start: 0;
+    -moz-padding-start: 0;
+    background: white;
+    font-size: .875em;
+    padding: $mainGutter/2 0;
+    position: absolute;
+    z-index: 3;
+    top: $mainGutter/2;
+    left: $mainGutter/2;
+    }
+  .filter-menu li{
+    list-style-type: none;
+    position: relative;
+    }
+  .filter-menu li a{
+    display: block;
+    padding: $mainGutter/8 $mainGutter/2;
+    white-space: pre;
+    &:hover{
+      background: $linkColor;
+      color: white;
+      } 
+    }
+  .filter-menu-child{
+    @include roundedUp(.375em);
+    @include shadowHere;
+    -webkit-padding-start: 0;
+    -moz-padding-start: 0;
+    display: none; 
+    position: absolute; 
+    background: white;
+    padding: $mainGutter/2 0;
+    left: 100%;
+    top: 0;
+    margin: 0;
+    }
+  .filter-menu li:hover .filter-menu-child{
+    display: block;
+    }
+  
+  }
+/********************************************* PAGINATION */
+#webkite-results{
+
+  .webkite-results-paginator{
+    font-size: 1em;
+    & a, & p{display: inline;}
+    & a{font-size: 1.2em; line-height: 0;}
+    }
+  /* page input */
+  input.webkite-page-input{
+    @include roundedUp(.188em);
+    border: 1px solid $lighterOpacity;
+    padding: $mainGutter/4;
+    max-width: 1.5em; 
+    font-size: .9em;
+    color: rgba(0,0,0,.6);
+    }
+  /* remove arrows */
+  .webkite-page-input::-webkit-outer-spin-button,
+  .webkite-page-input::-webkit-inner-spin-button{
+    -webkit-appearance: none;
+    margin: 0;
+    }
+    
+}
+  
+/********************************************** BLOCKS */
+#webkite-results{  
+  }
+  
+/************************************ PORTRAIT RESULTS */
+#webkite-results{  
+  }
+  
+/************************************** ELEMENT QUERIES */
+#webkite-results.xs{
+  .webkite-block,.webkite-title-area, .webkite-branding-area, .webkite-pagination-area{
+    width: 100%;
+    padding-right: 0;
+    }
+  .webkite-filter-area, .webkite-sort-area, select.webkite-sort{
+    width: 100%;
+    }
+  .webkite-filter-area{
+    margin-top: $mainGutter;
+    margin-left: 0;
+    padding-left: 0;
+    }
+  .webkite-title-area, .webkite-branding-area, .webkite-pagination-area{
+    text-align: center;
+    }
+  .webkite-branding-area{
+    padding-bottom: $mainGutter; 
+    }
+  .webkite-results-footer{
+    height: 2.813em*2+$mainGutter;
+    }
+  }
+  
+#webkite-results.sm{
+  .webkite-filter-area, .webkite-sort-area, select.webkite-sort{
+    width: 100%;
+    }
+  .webkite-filter-area{
+    margin-top: $mainGutter;
+    margin-left: 0;
+    padding-left: 0;
+    }
+  }

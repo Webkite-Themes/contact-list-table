@@ -1,2 +1,120 @@
-This is the main template for Jafar's Results view, which will be compiled to
-results.handlebars.js in the published theme.
+{{ log this}}
+<header class="webkite-results-header">
+  <div class="webkite-sort-area">{{>sorts this.sort}}</div>
+  <div class="webkite-filter-area">{{>filters this.filters}}</div>
+</header>
+
+{{#each this.items}}
+<section class="webkite-result">
+	<div class="webkite-block forty">
+	  <img src="{{#facet name="Image"}}{{displayValue}}{{/facet}}"/>
+	  <h2>
+	    {{#facet name="First Name"}}{{displayValue}}{{/facet}} 
+	   </h2>
+	   <h2>
+  	   {{#facet name="Last Name"}}{{displayValue}}{{/facet}}
+	   </h2>
+	</div><!--webkite-block-forty-->
+	<div class="webkite-block sixty">
+  	<ul>
+  	  <li>
+  	    <b>address</b>
+        <a target="_blank" href="http://maps.google.com/?q={{#facet name='Address 1'}}{{displayValue}}{{/facet}} {{#facet name='City'}}{{displayValue}}{{/facet}} {{#facet name='State'}}{{displayValue}}{{/facet}} {{#facet name='Zip Code'}}{{displayValue}}{{/facet}} {{#facet name='Country'}}{{displayValue}}{{/facet}}">
+        {{#facet name="Address 1"}}{{displayValue}}<br>{{/facet}}
+        {{#facet name="Address 2"}}{{displayValue}}<br>{{/facet}}
+        {{#facet name="City"}}{{displayValue}}{{/facet}}, {{#facet name="State"}}{{displayValue}}{{/facet}}
+        {{#facet name="Zip Code"}}{{displayValue}}{{/facet}}
+        </a>
+      </li>
+      <li>
+        <b>email</b>
+        {{#facet name="Email"}}
+        <a href="mailto:{{displayValue}}">{{displayValue}}</a>
+        {{/facet}}
+      </li>
+      <li>
+        <b>phone number</b>
+        {{#facet name="Phone Number"}}
+        <a href="tel:{{displayValue}}">{{displayValue}}</a>
+        {{/facet}}
+      </li>
+  	</ul>
+  	<div id="{{this.id}}" class="webkite-item-details">
+    	<ul>
+        <li>
+          <b>website</b>
+          {{#facet name="Website"}}
+          <a href="{{displayValue}}">{{displayValue}}</a>
+          {{/facet}}
+        </li>
+        <li>
+          <b>twitter</b>
+          {{#facet name="Twitter"}}
+          <a href="https://twitter.com/{{displayValue}}">{{displayValue}}</a>
+          {{/facet}}
+        </li>
+        <li>
+          <b>university</b>
+          {{#facet name="University"}}
+          {{#if filterable}}
+          <a href="#" class="webkite-add-filter" data-facet="{{text}}" data-operator="is">{{displayValue}}</a>
+          {{else}}
+          {{displayValue}}
+          {{/if}}
+          {{/facet}}
+        </li>
+        <li>
+          <b>degree</b>
+          {{#facet name="Degree"}}
+          {{#if filterable}}
+          <a href="#" class="webkite-add-filter" data-facet="{{text}}" data-operator="is">{{displayValue}}</a>
+          {{else}}
+          {{displayValue}}
+          {{/if}}
+          {{/facet}}
+        </li>
+        <li>
+          <b>year of graduation</b>
+          {{#facet name="Year of Graduation"}}
+          {{displayValue}}
+          {{/facet}}
+        </li>
+        <li>
+          <b>employer</b>
+          {{#facet name="Employer"}}
+          {{#if filterable}}
+          <a href="#" class="webkite-add-filter" data-facet="{{text}}" data-operator="is">{{displayValue}}</a>
+          {{else}}
+          {{displayValue}}
+          {{/if}}
+          {{/facet}}
+        </li>
+        <li>
+          <b>department</b>
+          {{#facet name="Department"}}
+          {{#if filterable}}
+          <a href="#" class="webkite-add-filter" data-facet="{{text}}" data-operator="is">{{displayValue}}</a>
+          {{else}}
+          {{displayValue}}
+          {{/if}}
+          {{/facet}}
+        </li>
+        <li>
+          <b>job title</b>
+          {{#facet name="Job Title"}}
+          {{displayValue}}
+          {{/facet}}
+        </li>
+      </ul>
+  	</div><!-- webkite-item-details -->
+  	<a href="#{{this.id}}" data-id={{this.id}} class="webkite-toggle-item webkite-toggle {{this.id}}-toggler {{#if showDetails}}webkite-hide{{/if}} more-button" data-target=".{{this.id}}-toggler" data-animate="200ms">more</a>
+  	<a href="#{{this.id}}" data-id={{this.id}} class="webkite-toggle-item webkite-toggle {{this.id}}-toggler {{#unless showDetails}}webkite-hide{{/unless}} less-button" data-target=".{{this.id}}-toggler" data-animate="200ms">less</a>
+	</div><!--webkite-block sixty-->
+  <footer class="webkite-result-footer"></footer>
+</section>
+{{/each}}
+
+<footer class="webkite-results-footer">
+  <div class="webkite-branding-area"><a href="http://webkite.com"></a></div>
+  <div class="webkite-pagination-area">{{>paginator pagination}}</div>
+</footer>
