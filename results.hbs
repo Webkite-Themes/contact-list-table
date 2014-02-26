@@ -4,23 +4,26 @@
   <div class="webkite-filter-area">{{>filters this.filters}}</div>
 </header>
 
+{{#with items}}
 <table>
   <thead>
     <tr>
-      <th></th>
+      <th class="image-thumbnail"></th>
       <th>Name</th>
-      <th>Address</th>
-      <th>Email</th>
+      <th class="webkite-address">Address</th>
+      <th class="webkite-email">Email</th>
       <th>Phone</th>
       <th></th>
     </tr>
-  </thead> 
+  </thead>
   <tbody>
-    {{#each this.items}}
+    {{#each this}}
     <tr class="webkite-result">
+      {{#facet name="Image"}}
       <td>
-        <div class="image-thumbnail" style="background-image:url({{#facet name="Image"}}{{displayValue}}{{/facet}});"></div>
+        <div class="image-thumbnail" style="background-image:url({{displayValue}});"></div>
       </td>
+      {{/facet}}
       <td>
         <h2>
           {{#facet name="First Name"}}{{displayValue}}{{/facet}} 
@@ -29,16 +32,16 @@
           {{#facet name="Last Name"}}{{displayValue}}{{/facet}}
         </h2>
       </td>
-      <td>
-        <a target="_blank" href="http://maps.google.com/?q={{#facet name='Address 1'}}{{displayValue}}{{/facet}} {{#facet name='City'}}{{displayValue}}{{/facet}} {{#facet name='State'}}{{displayValue}}{{/facet}} {{#facet name='Zip Code'}}{{displayValue}}{{/facet}} {{#facet name='Country'}}{{displayValue}}{{/facet}}">
-          {{#facet name="Address 1"}}{{displayValue}}<br>{{/facet}}
-          {{#facet name="Address 2"}}{{displayValue}}<br>{{/facet}}
-          {{#facet name="City"}}{{displayValue}}{{/facet}}, {{#facet name="State"}}{{displayValue}}{{/facet}}
-          {{#facet name="Zip Code"}}{{displayValue}}{{/facet}}
+      <td class="webkite-address">
+         <a class="webkite-address" target="_blank" href="http://maps.google.com/?q={{#facet name='Address 1'}}{{displayValue}}{{/facet}} {{#facet name='City'}}{{displayValue}}{{/facet}} {{#facet name='State'}}{{displayValue}}{{/facet}} {{#facet name='Zip Code'}}{{displayValue}}{{/facet}} {{#facet name='Country'}}{{displayValue}}{{/facet}}">
+          {{#facet name="Address 1"}}<span>{{displayValue}}</span>{{/facet}}
+          {{#facet name="Address 2"}}<span>{{displayValue}}</span>{{/facet}}
+          {{#facet name="City"}}<span>{{displayValue}}{{/facet}}, {{#facet name="State"}}{{displayValue}}{{/facet}}
+          {{#facet name="Zip Code"}}{{displayValue}}{{/facet}}</span>
           </a>
       </td>
-      <td>
-        {{#facet name="Email"}}<a href="mailto:{{displayValue}}">{{displayValue}}</a>{{/facet}}
+      <td class="webkite-email">
+        {{#facet name="Email"}}<a href="mailto:{{displayValue}}" class="webkite-email">{{displayValue}}</a>{{/facet}}
       </td>
       <td>
         {{#facet name="Phone Number"}}<a href="tel:{{displayValue}}">{{displayValue}}</a>{{/facet}}
@@ -51,6 +54,7 @@
     {{/each}}
   </tbody>
 </table>
+{{/with}}
 
 <footer class="webkite-results-footer">
   <div class="webkite-branding-area"><a href="http://webkite.com"></a></div>
