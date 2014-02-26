@@ -353,7 +353,70 @@
     margin: 0; }
 
 /********************************************** BLOCKS */
+#webkite-results table {
+  width: 100%;
+  max-width: 100%; }
+#webkite-results tbody > tr:nth-child(odd) {
+  background: rgba(0, 0, 0, 0.04); }
+#webkite-results tbody > tr:nth-child(even) {
+  background: rgba(0, 0, 0, 0.05); }
+#webkite-results th, #webkite-results td {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  line-height: 1em;
+  padding: 0.625em;
+  text-align: left;
+  vertical-align: middle; }
+  #webkite-results th.webkite-address, #webkite-results th.webkite-email, #webkite-results td.webkite-address, #webkite-results td.webkite-email {
+    max-width: 5em; }
+#webkite-results td a {
+  font-size: .875em; }
+  #webkite-results td a.webkite-address span, #webkite-results td a.webkite-email {
+    display: inline-block;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap; }
+#webkite-results a.more-button, #webkite-results a.less-button {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-border-radius: 0.188em;
+  -moz-border-radius: 0.188em;
+  -ms-border-radius: 0.188em;
+  -o-border-radius: 0.188em;
+  border-radius: 0.188em;
+  color: white;
+  display: inline-block;
+  float: right;
+  font: 400 .75em/1 "Open Sans";
+  padding: 0.3125em 0.625em;
+  margin-top: 1.25em;
+  text-align: center;
+  width: 4.375em; }
+#webkite-results a.more-button {
+  background: #1b9cd2; }
+  #webkite-results a.more-button:hover {
+    background: #0073a7; }
+#webkite-results a.less-button {
+  background: rgba(0, 0, 0, 0.6); }
+  #webkite-results a.less-button:hover {
+    background: rgba(0, 0, 0, 0.6); }
+
 /************************************ TABLE RESULTS */
+#webkite-results .image-thumbnail {
+  -webkit-border-radius: 0.188em;
+  -moz-border-radius: 0.188em;
+  -ms-border-radius: 0.188em;
+  -o-border-radius: 0.188em;
+  border-radius: 0.188em;
+  background-position: center center;
+  background-size: cover;
+  display: block;
+  height: 3.125em;
+  width: 3.125em; }
+
 /************************************** ELEMENT QUERIES */
 #webkite-results.xs .webkite-block, #webkite-results.xs .webkite-title-area, #webkite-results.xs .webkite-branding-area, #webkite-results.xs .webkite-pagination-area {
   width: 100%;

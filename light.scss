@@ -388,11 +388,59 @@ $mainGutter: 1.25em;
   
 /********************************************** BLOCKS */
 #webkite-results{
- 
+
+  table{
+    width: 100%;
+    max-width: 100%;
+    }
+  tbody > tr:nth-child(odd){background: $lighterthanlightestOpacity;}
+  tbody > tr:nth-child(even){background: $lightestOpacity;}
+  th, td{
+    @include boxedUp;
+    line-height: 1em;
+    padding: $mainGutter/2;
+    text-align: left;
+    vertical-align: middle;
+    &.webkite-address, &.webkite-email{max-width: 5em;}
+    }
+  td a{
+    font-size: .875em;
+    &.webkite-address span, &.webkite-email{@include ellipsisThis;}
+    }
+    a.more-button, a.less-button{
+      @include boxedUp;
+      @include roundedUp(.188em);
+      color: white;
+      display: inline-block;
+      float: right;
+      font: 400 .75em/1 "Open Sans";
+      padding: $mainGutter/4 $mainGutter/2;
+      margin-top: $mainGutter;
+      text-align: center;
+      width: 4.375em;
+      }
+    a.more-button{
+      background: $linkColor;
+      &:hover{background: $linkHover;}
+      }
+    a.less-button{
+      background: $lightOpacity;
+      &:hover{background: $lightOpacity*2;}
+      }
+
   }
   
 /************************************ TABLE RESULTS */
 #webkite-results{
+  
+  .image-thumbnail{
+    @include roundedUp(.188em);
+    background-position: center center;
+    background-size: cover;
+    display: block;
+    height: 3.125em;
+    width: 3.125em;
+    }
       
   }
   
