@@ -9,28 +9,28 @@
   <thead>
     <tr>
       <th class="image-thumbnail"></th>
-      <th>Name</th>
+      <th class="webkite-name webkite-apply-sort"><a href="#" data-sort="Last Name">Name</a></th>
       <th class="webkite-address">Address</th>
-      <th class="webkite-email">Email</th>
       <th>Phone</th>
       <th></th>
     </tr>
   </thead>
+  {{#each this}}
   <tbody>
-    {{#each this}}
     <tr class="webkite-result">
       {{#facet name="Image"}}
       <td>
         <div class="image-thumbnail" style="background-image:url({{displayValue}});"></div>
       </td>
       {{/facet}}
-      <td>
+      <td class="webkite-name">
         <h2>
           {{#facet name="First Name"}}{{displayValue}}{{/facet}} 
         </h2>
         <h2>
           {{#facet name="Last Name"}}{{displayValue}}{{/facet}}
         </h2>
+        {{#facet name="Email"}}<a href="mailto:{{displayValue}}" class="webkite-email">{{displayValue}}</a>{{/facet}}
       </td>
       <td class="webkite-address">
          <a class="webkite-address" target="_blank" href="http://maps.google.com/?q={{#facet name='Address 1'}}{{displayValue}}{{/facet}} {{#facet name='City'}}{{displayValue}}{{/facet}} {{#facet name='State'}}{{displayValue}}{{/facet}} {{#facet name='Zip Code'}}{{displayValue}}{{/facet}} {{#facet name='Country'}}{{displayValue}}{{/facet}}">
@@ -40,19 +40,17 @@
           {{#facet name="Zip Code"}}{{displayValue}}{{/facet}}</span>
           </a>
       </td>
-      <td class="webkite-email">
-        {{#facet name="Email"}}<a href="mailto:{{displayValue}}" class="webkite-email">{{displayValue}}</a>{{/facet}}
-      </td>
       <td>
         {{#facet name="Phone Number"}}<a href="tel:{{displayValue}}">{{displayValue}}</a>{{/facet}}
       </td>
       <td>
-        <a href="#{{this.id}}" data-id={{this.id}} class="webkite-toggle-item webkite-toggle {{this.id}}-toggler {{#if showDetails}}webkite-hide{{/if}} more-button" data-target=".{{this.id}}-toggler" data-animate="200ms">more</a>
-      	<a href="#{{this.id}}" data-id={{this.id}} class="webkite-toggle-item webkite-toggle {{this.id}}-toggler {{#unless showDetails}}webkite-hide{{/unless}} less-button" data-target=".{{this.id}}-toggler" data-animate="200ms">less</a>
+        <a href="#{{this.id}}" data-id={{this.id}} class="webkite-toggle-item webkite-toggle {{this.id}}-toggler {{#if showDetails}}webkite-hide{{/if}} more-button" data-target=".{{this.id}}-toggler" data-animate="200ms"></a>
+      	<a href="#{{this.id}}" data-id={{this.id}} class="webkite-toggle-item webkite-toggle {{this.id}}-toggler {{#unless showDetails}}webkite-hide{{/unless}} less-button" data-target=".{{this.id}}-toggler" data-animate="200ms"></a>
       </td>
     </tr>
-    {{/each}}
+    <tr id="{{this.id}}" class="webkite-item-details">{{>result-details}}</tr>
   </tbody>
+  {{/each}}
 </table>
 {{/with}}
 
