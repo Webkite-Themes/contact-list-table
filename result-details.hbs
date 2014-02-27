@@ -1,0 +1,76 @@
+<td colspan="5">
+    	<ul>
+        <li>
+          <b>website</b>
+          {{#facet name="Website"}}
+          <a href="{{displayValue}}">{{displayValue}}</a>
+          {{/facet}}
+        </li>
+        <li>
+          <b>twitter</b>
+          {{#facet name="Twitter"}}
+          <a href="https://twitter.com/{{displayValue}}">{{displayValue}}</a>
+          {{/facet}}
+        </li>
+        <li>
+          <b>university</b>
+          {{#facet name="University"}}
+          {{#if filterable}}
+          {{#each values}}
+          <a href="#" class="webkite-add-filter" data-facet="{{../name}}" data-operator="is" data-value="{{this}}">{{this}}</a>{{#unless @last}}, {{/unless}}
+          {{/each}}
+          {{else}}
+          {{displayValue}}
+          {{/if}}
+          {{/facet}}
+        </li>
+        <li>
+          <b>degree</b>
+          {{#facet name="Degree"}}
+          {{#if filterable}}
+          {{#each values}}
+          <a href="#" class="webkite-add-filter" data-facet="{{../name}}" data-operator="is" data-value="{{this}}">{{this}}</a>{{#unless @last}}, {{/unless}}
+          {{/each}}
+          {{else}}
+          {{displayValue}}
+          {{/if}}
+          {{/facet}}
+        </li>
+        <li>
+          <b>year of graduation</b>
+          {{#facet name="Year of Graduation"}}
+          {{displayValue}}
+          {{/facet}}
+        </li>
+        <li>
+          <b>employer</b>
+          {{#facet name="Employer"}}
+          {{#if filterable}}
+          {{#each values}}
+          <a href="#" class="webkite-add-filter" data-facet="{{../name}}" data-operator="is" data-value="{{this}}">{{this}}</a>{{#unless @last}}, {{/unless}}
+          {{/each}}
+          {{else}}
+          {{displayValue}}
+          {{/if}}
+          {{/facet}}
+        </li>
+        <li>
+          <b>department</b>
+          {{#facet name="Department"}}
+          {{#if filterable}}
+          {{#each values}}
+          <a href="#" class="webkite-add-filter" data-facet="{{../name}}" data-operator="is" data-value="{{this}}">{{this}}</a>{{#unless @last}}, {{/unless}}
+          {{/each}}
+          {{else}}
+          {{displayValue}}
+          {{/if}}
+          {{/facet}}
+        </li>
+        <li>
+          <b>job title</b>
+          {{#facet name="Job Title"}}
+          {{displayValue}}
+          {{/facet}}
+        </li>
+      </ul>
+  	</td><!-- webkite-item-details -->
