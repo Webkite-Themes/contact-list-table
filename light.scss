@@ -391,41 +391,61 @@ $mainGutter: 1.25em;
 
   table{
     width: 100%;
+    margin-bottom: $mainGutter;
     max-width: 100%;
+    text-align: left;
     }
-  tbody > tr:nth-child(odd){background: $lighterthanlightestOpacity;}
-  tbody > tr:nth-child(even){background: $lightestOpacity;}
+  tbody:nth-child(odd){
+    background: $lighterthanlightestOpacity;
+    }
+  tbody:nth-child(even){
+    background: $lighterevenstillOpacity;
+    }
+  tbody > tr+tr{
+    background: -moz-linear-gradient(top,  rgba(0,0,0,0.02) 0%, rgba(0,0,0,0) 5%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0.02)), color-stop(5%,rgba(0,0,0,0)));
+    background: -webkit-linear-gradient(top,  rgba(0,0,0,0.02) 0%,rgba(0,0,0,0) 5%);
+    background: -o-linear-gradient(top,  rgba(0,0,0,0.02) 0%,rgba(0,0,0,0) 5%);
+    background: -ms-linear-gradient(top,  rgba(0,0,0,0.02) 0%,rgba(0,0,0,0) 5%);
+    background: linear-gradient(to bottom,  rgba(0,0,0,0.02) 0%,rgba(0,0,0,0) 5%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#33000000', endColorstr='#00000000',GradientType=0 );
+    }
   th, td{
     @include boxedUp;
     line-height: 1em;
     padding: $mainGutter/2;
-    text-align: left;
     vertical-align: middle;
-    &.webkite-address, &.webkite-email{max-width: 5em;}
+    &.webkite-name{max-width: 10em;}
+    &.webkite-address{max-width: 10em;}
+    }
+  th{
+    color: $lightOpacity;
+    a{
+      @extend th;
+      font-weight: 700;
+      &:hover{color: $lightOpacity;}
+      }
     }
   td a{
     font-size: .875em;
     &.webkite-address span, &.webkite-email{@include ellipsisThis;}
+    &.webkite-email{display: block;}
     }
     a.more-button, a.less-button{
-      @include boxedUp;
-      @include roundedUp(.188em);
-      color: white;
+      background: url("open-close.png");
       display: inline-block;
-      float: right;
-      font: 400 .75em/1 "Open Sans";
-      padding: $mainGutter/4 $mainGutter/2;
-      margin-top: $mainGutter;
-      text-align: center;
-      width: 4.375em;
+      height: 18px;
+      width: 18px;
       }
     a.more-button{
-      background: $linkColor;
-      &:hover{background: $linkHover;}
+      background-position: 0 0;
+      &:hover{background-position-y: -18px;}
+      &:active{background-position-y: -36px;}
       }
     a.less-button{
-      background: $lightOpacity;
-      &:hover{background: $lightOpacity*2;}
+      background-position: -18px 0;
+      &:hover{background-position: -18px -18px;}
+      &:active{background-position: -18px -36px;}
       }
 
   }
@@ -441,6 +461,7 @@ $mainGutter: 1.25em;
     height: 3.125em;
     width: 3.125em;
     }
+  
       
   }
   

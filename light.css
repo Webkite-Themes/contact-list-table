@@ -2,7 +2,7 @@
 /* RESET */
 #webkite-results {
   /* HTML5 display-role reset for older browsers */ }
-  #webkite-results div, #webkite-results span, #webkite-results applet, #webkite-results object, #webkite-results iframe, #webkite-results h1, #webkite-results h2, #webkite-results h3, #webkite-results h4, #webkite-results h5, #webkite-results h6, #webkite-results p, #webkite-results blockquote, #webkite-results pre, #webkite-results a, #webkite-results abbr, #webkite-results acronym, #webkite-results address, #webkite-results big, #webkite-results cite, #webkite-results code, #webkite-results del, #webkite-results dfn, #webkite-results em, #webkite-results img, #webkite-results ins, #webkite-results kbd, #webkite-results q, #webkite-results s, #webkite-results samp, #webkite-results small, #webkite-results strike, #webkite-results strong, #webkite-results sub, #webkite-results sup, #webkite-results tt, #webkite-results var, #webkite-results b, #webkite-results u, #webkite-results i, #webkite-results center, #webkite-results dl, #webkite-results dt, #webkite-results dd, #webkite-results ol, #webkite-results ul, #webkite-results li, #webkite-results fieldset, #webkite-results form, #webkite-results label, #webkite-results legend, #webkite-results table, #webkite-results caption, #webkite-results tbody, #webkite-results tfoot, #webkite-results thead, #webkite-results tr, #webkite-results th, #webkite-results td, #webkite-results article, #webkite-results aside, #webkite-results canvas, #webkite-results details, #webkite-results embed, #webkite-results figure, #webkite-results figcaption, #webkite-results footer, #webkite-results header, #webkite-results hgroup, #webkite-results menu, #webkite-results nav, #webkite-results output, #webkite-results ruby, #webkite-results section, #webkite-results summary, #webkite-results time, #webkite-results mark, #webkite-results audio, #webkite-results video {
+  #webkite-results div, #webkite-results span, #webkite-results applet, #webkite-results object, #webkite-results iframe, #webkite-results h1, #webkite-results h2, #webkite-results h3, #webkite-results h4, #webkite-results h5, #webkite-results h6, #webkite-results p, #webkite-results blockquote, #webkite-results pre, #webkite-results a, #webkite-results abbr, #webkite-results acronym, #webkite-results address, #webkite-results big, #webkite-results cite, #webkite-results code, #webkite-results del, #webkite-results dfn, #webkite-results em, #webkite-results img, #webkite-results ins, #webkite-results kbd, #webkite-results q, #webkite-results s, #webkite-results samp, #webkite-results small, #webkite-results strike, #webkite-results strong, #webkite-results sub, #webkite-results sup, #webkite-results tt, #webkite-results var, #webkite-results b, #webkite-results u, #webkite-results i, #webkite-results center, #webkite-results dl, #webkite-results dt, #webkite-results dd, #webkite-results ol, #webkite-results ul, #webkite-results li, #webkite-results fieldset, #webkite-results form, #webkite-results label, #webkite-results legend, #webkite-results table, #webkite-results caption, #webkite-results tbody, #webkite-results tfoot, #webkite-results thead, #webkite-results tr, #webkite-results th, #webkite-results th a, #webkite-results td, #webkite-results article, #webkite-results aside, #webkite-results canvas, #webkite-results details, #webkite-results embed, #webkite-results figure, #webkite-results figcaption, #webkite-results footer, #webkite-results header, #webkite-results hgroup, #webkite-results menu, #webkite-results nav, #webkite-results output, #webkite-results ruby, #webkite-results section, #webkite-results summary, #webkite-results time, #webkite-results mark, #webkite-results audio, #webkite-results video {
     margin: 0;
     padding: 0;
     border: 0;
@@ -355,21 +355,38 @@
 /********************************************** BLOCKS */
 #webkite-results table {
   width: 100%;
-  max-width: 100%; }
-#webkite-results tbody > tr:nth-child(odd) {
+  margin-bottom: 1.25em;
+  max-width: 100%;
+  text-align: left; }
+#webkite-results tbody:nth-child(odd) {
   background: rgba(0, 0, 0, 0.04); }
-#webkite-results tbody > tr:nth-child(even) {
-  background: rgba(0, 0, 0, 0.05); }
-#webkite-results th, #webkite-results td {
+#webkite-results tbody:nth-child(even) {
+  background: rgba(0, 0, 0, 0.02); }
+#webkite-results tbody > tr + tr {
+  background: -moz-linear-gradient(top, rgba(0, 0, 0, 0.02) 0%, rgba(0, 0, 0, 0) 5%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(0, 0, 0, 0.02)), color-stop(5%, rgba(0, 0, 0, 0)));
+  background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.02) 0%, rgba(0, 0, 0, 0) 5%);
+  background: -o-linear-gradient(top, rgba(0, 0, 0, 0.02) 0%, rgba(0, 0, 0, 0) 5%);
+  background: -ms-linear-gradient(top, rgba(0, 0, 0, 0.02) 0%, rgba(0, 0, 0, 0) 5%);
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.02) 0%, rgba(0, 0, 0, 0) 5%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#33000000', endColorstr='#00000000',GradientType=0 ); }
+#webkite-results th, #webkite-results th a, #webkite-results td {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   line-height: 1em;
   padding: 0.625em;
-  text-align: left;
   vertical-align: middle; }
-  #webkite-results th.webkite-address, #webkite-results th.webkite-email, #webkite-results td.webkite-address, #webkite-results td.webkite-email {
-    max-width: 5em; }
+  #webkite-results th.webkite-name, #webkite-results th a.webkite-name, #webkite-results td.webkite-name {
+    max-width: 10em; }
+  #webkite-results th.webkite-address, #webkite-results th a.webkite-address, #webkite-results td.webkite-address {
+    max-width: 10em; }
+#webkite-results th, #webkite-results th a {
+  color: rgba(0, 0, 0, 0.6); }
+  #webkite-results th a {
+    font-weight: 700; }
+    #webkite-results th a:hover {
+      color: rgba(0, 0, 0, 0.6); }
 #webkite-results td a {
   font-size: .875em; }
   #webkite-results td a.webkite-address span, #webkite-results td a.webkite-email {
@@ -378,31 +395,25 @@
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap; }
+  #webkite-results td a.webkite-email {
+    display: block; }
 #webkite-results a.more-button, #webkite-results a.less-button {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  -webkit-border-radius: 0.188em;
-  -moz-border-radius: 0.188em;
-  -ms-border-radius: 0.188em;
-  -o-border-radius: 0.188em;
-  border-radius: 0.188em;
-  color: white;
+  background: url("open-close.png");
   display: inline-block;
-  float: right;
-  font: 400 .75em/1 "Open Sans";
-  padding: 0.3125em 0.625em;
-  margin-top: 1.25em;
-  text-align: center;
-  width: 4.375em; }
+  height: 18px;
+  width: 18px; }
 #webkite-results a.more-button {
-  background: #1b9cd2; }
+  background-position: 0 0; }
   #webkite-results a.more-button:hover {
-    background: #0073a7; }
+    background-position-y: -18px; }
+  #webkite-results a.more-button:active {
+    background-position-y: -36px; }
 #webkite-results a.less-button {
-  background: rgba(0, 0, 0, 0.6); }
+  background-position: -18px 0; }
   #webkite-results a.less-button:hover {
-    background: rgba(0, 0, 0, 0.6); }
+    background-position: -18px -18px; }
+  #webkite-results a.less-button:active {
+    background-position: -18px -36px; }
 
 /************************************ TABLE RESULTS */
 #webkite-results .image-thumbnail {
