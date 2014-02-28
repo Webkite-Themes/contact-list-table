@@ -396,21 +396,6 @@ $mainGutter: 1.25em;
     max-width: 100%;
     text-align: left;
     }
-  tbody:nth-child(odd){
-    background: $lighterthanlightestOpacity;
-    }
-  tbody:nth-child(even){
-    background: $lighterevenstillOpacity;
-    }
-  tbody > tr+tr{
-    background: -moz-linear-gradient(top,  rgba(0,0,0,0.02) 0%, rgba(0,0,0,0) 5%);
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0.02)), color-stop(5%,rgba(0,0,0,0)));
-    background: -webkit-linear-gradient(top,  rgba(0,0,0,0.02) 0%,rgba(0,0,0,0) 5%);
-    background: -o-linear-gradient(top,  rgba(0,0,0,0.02) 0%,rgba(0,0,0,0) 5%);
-    background: -ms-linear-gradient(top,  rgba(0,0,0,0.02) 0%,rgba(0,0,0,0) 5%);
-    background: linear-gradient(to bottom,  rgba(0,0,0,0.02) 0%,rgba(0,0,0,0) 5%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#33000000', endColorstr='#00000000',GradientType=0 );
-    }
   th, td{
     @include boxedUp;
     line-height: 1em;
@@ -448,12 +433,17 @@ $mainGutter: 1.25em;
       &:hover{background-position: -18px -18px;}
       &:active{background-position: -18px -36px;}
       }
-
-  }
-  
+ 
+ } 
 /************************************ TABLE RESULTS */
 #webkite-results{
   
+  tbody:nth-child(odd){
+    background: $lighterthanlightestOpacity;
+    }
+  tbody:nth-child(even){
+    background: $lighterevenstillOpacity;
+    }
   .image-thumbnail{
     @include roundedUp(.188em);
     background-position: center center;
@@ -462,11 +452,48 @@ $mainGutter: 1.25em;
     height: 3.125em;
     width: 3.125em;
     }
-  
       
   }
   
+/************************************ TABLE ITEM DETAILS */ 
+#webkite-results{
   
+  .webkite-item-details{
+    background: -moz-linear-gradient(top,  rgba(0,0,0,0.02) 0%, rgba(0,0,0,0) 5%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0.02)), color-stop(5%,rgba(0,0,0,0)));
+    background: -webkit-linear-gradient(top,  rgba(0,0,0,0.02) 0%,rgba(0,0,0,0) 5%);
+    background: -o-linear-gradient(top,  rgba(0,0,0,0.02) 0%,rgba(0,0,0,0) 5%);
+    background: -ms-linear-gradient(top,  rgba(0,0,0,0.02) 0%,rgba(0,0,0,0) 5%);
+    background: linear-gradient(to bottom,  rgba(0,0,0,0.02) 0%,rgba(0,0,0,0) 5%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#33000000', endColorstr='#00000000',GradientType=0 );
+    position: relative;
+    ul, div{
+      @include boxedUp;
+      display: inline-block;
+      vertical-align: top;
+      &.forty{max-width: 39%;}
+      &.sixty{max-width: 59%; padding-left: $mainGutter;}
+      }
+      img{
+      @include roundedUp(.325em);
+      width: 100%;
+      max-width: 100%; height: auto;
+      margin-bottom: $mainGutter;
+      }
+      li{padding-bottom: $mainGutter;}
+      b, span.facet-values{display: inline-block; width: 49%; vertical-align: top;}
+      b{font-weight: 700;}
+    }
+  tr + tr > td{
+    column-span: 5;
+    -webkit-column-span: 5; /* Safari & Chrome */
+    -moz-column-span: 5; /* Firefox */
+    -ms-column-span: 5; /* Internet Explorer */
+    -o-column-span: 5; /* Opera */
+    }
+  
+  }
+
 /************************************** ELEMENT QUERIES */
 #webkite-results.xs{
   .webkite-block,.webkite-title-area, .webkite-branding-area, .webkite-pagination-area{
