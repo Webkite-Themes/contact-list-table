@@ -1,7 +1,7 @@
 {{ log this}}
 <header class="webkite-results-header">
-  <div class="webkite-sort-area">{{>sorts this.sort}}</div>
-  <div class="webkite-filter-area">{{>filters this.filters}}</div>
+  {{>sorts this.sort}}
+  {{>filters this.filters}}
 </header>
 
 {{#with items}}
