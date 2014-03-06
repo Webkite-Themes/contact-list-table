@@ -20,8 +20,19 @@
           {{/facet}}
         </li>
         <li>
-          <b>university</b>
           {{#facet name="University"}}
+            {{#if filterable}}
+            <b class="inline-filter-button">
+            <a class="webkite-toggle" data-target=".{{../../id}}-{{name}}-menu">{{downcase name}}<i></i></a>
+            <ul class="{{../../id}}-{{name}}-menu inline-filter-menu webkite-hide webkite-menu">
+              {{#each filterableValues}}
+              <li><a href="#" class="webkite-add-filter webkite-toggle" data-target=".{{../../../id}}-{{../name}}-menu" data-facet="{{../name}}" data-operator="is" data-value="{{this}}">{{this}}</a></li>
+            {{/each}}
+            </ul>
+            </b>
+          {{else}}
+            <b>{{downcase name}}</b>
+          {{/if}}
           {{#if filterable}}
           <span class="facet-values">
           {{#each values}}
@@ -29,13 +40,26 @@
           {{/each}}
           </span>
           {{else}}
+          <span class="facet-values">
           {{displayValue}}
+          </span>
           {{/if}}
           {{/facet}}
         </li>
         <li>
-          <b>degree</b>
           {{#facet name="Degree"}}
+          {{#if filterable}}
+          <b class="inline-filter-button">
+            <a class="webkite-toggle" data-target=".{{../../id}}-{{name}}-menu">{{downcase name}}<i></i></a>
+            <ul class="{{../../id}}-{{name}}-menu inline-filter-menu webkite-hide webkite-menu">
+              {{#each filterableValues}}
+              <li><a href="#" class="webkite-add-filter webkite-toggle" data-target=".{{../../../id}}-{{../name}}-menu" data-facet="{{../name}}" data-operator="is" data-value="{{this}}">{{this}}</a></li>
+            {{/each}}
+            </ul>
+          </b>
+          {{else}}
+            <b>{{downcase name}}</b>
+          {{/if}}
           {{#if filterable}}
           <span class="facet-values">
           {{#each values}}
@@ -43,7 +67,9 @@
           {{/each}}
           </span>
           {{else}}
+          <span class="facet-values">
           {{displayValue}}
+          </span>
           {{/if}}
           {{/facet}}
         </li>
@@ -56,8 +82,19 @@
           {{/facet}}
         </li>
         <li>
-          <b>employer</b>
           {{#facet name="Employer"}}
+          {{#if filterable}}
+          <b class="inline-filter-button">
+            <a class="webkite-toggle" data-target=".{{../../id}}-{{name}}-menu">{{downcase name}}<i></i></a>
+            <ul class="{{../../id}}-{{name}}-menu inline-filter-menu webkite-hide webkite-menu">
+              {{#each filterableValues}}
+              <li><a href="#" class="webkite-add-filter webkite-toggle" data-target=".{{../../../id}}-{{../name}}-menu" data-facet="{{../name}}" data-operator="is" data-value="{{this}}">{{this}}</a></li>
+            {{/each}}
+            </ul>
+          </b>
+          {{else}}
+            <b>{{downcase name}}</b>
+          {{/if}}
           {{#if filterable}}
           <span class="facet-values">
           {{#each values}}
@@ -65,13 +102,26 @@
           {{/each}}
           </span>
           {{else}}
+          <span class="facet-values">
           {{displayValue}}
+          </span>
           {{/if}}
           {{/facet}}
         </li>
         <li>
-          <b>department</b>
           {{#facet name="Department"}}
+          {{#if filterable}}
+          <b class="inline-filter-button">
+            <a class="webkite-toggle" data-target=".{{../../id}}-{{name}}-menu">{{downcase name}}<i></i></a>
+            <ul class="{{../../id}}-{{name}}-menu inline-filter-menu webkite-hide webkite-menu">
+              {{#each filterableValues}}
+              <li><a href="#" class="webkite-add-filter webkite-toggle" data-target=".{{../../../id}}-{{../name}}-menu" data-facet="{{../name}}" data-operator="is" data-value="{{this}}">{{this}}</a></li>
+            {{/each}}
+            </ul>
+          </b>
+          {{else}}
+            <b>{{downcase name}}</b>
+          {{/if}}
           {{#if filterable}}
           <span class="facet-values">
           {{#each values}}
@@ -79,7 +129,9 @@
           {{/each}}
           </span>
           {{else}}
+          <span class="facet-values">
           {{displayValue}}
+          </span>
           {{/if}}
           {{/facet}}
         </li>
