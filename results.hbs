@@ -24,12 +24,10 @@
   </thead>
   {{#each this}}
   <tbody>
-    <tr class="webkite-result">
-      {{#facet name="Image"}}
+    <tr class="webkite-result">      
       <td class="image-thumbnail until-xs">
-        <div class="image-thumbnail" style="background-image:url({{displayValue}});"></div>
+        {{#facet name="Image"}}<div class="image-thumbnail" style="background-image:url({{displayValue}});"></div>{{/facet}}
       </td>
-      {{/facet}}
       <td class="webkite-name">
         <ul>
           <li>
