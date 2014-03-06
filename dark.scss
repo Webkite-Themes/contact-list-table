@@ -358,7 +358,7 @@ $mainGutter: 1.25em;
       position: relative;
       &:after{
         content: "\203A";
-        color: $lightOpacity;
+        color: $lightOpacity/2;
         opacity: .5;
         position: absolute;
         right: $mainGutter/3;
