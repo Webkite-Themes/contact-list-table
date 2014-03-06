@@ -2,6 +2,11 @@
 ---
 ##changelog
   
+###0.1.1
+
+* Minor color corrections for dark theme
+* Darker shadows for dark theme
+
 ###0.1.0
 
 * Initial release of the table view
