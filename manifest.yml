@@ -7,6 +7,7 @@ images:
   - branding-dark.svg
   - clear-all-icon.png
   - open-close.png
+  - sort-direction.png
   
 stylesheets:
   - light.css
