@@ -12,7 +12,7 @@
       <th class="image-thumbnail"></th>
       <th class="webkite-name webkite-apply-sort">
         {{#if (contains ../sort.sortableFacets "Last Name")}}
-        <a href="#" data-sort="Last Name">Name</a>
+        <a href="#" data-sort="Last Name" class="{{../../currentDirection}}">Name</a>
         {{else}}
         <span>Name</span>
         {{/if}}
