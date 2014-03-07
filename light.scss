@@ -727,6 +727,7 @@ $mainGutter: 1.25em;
   }
 #webkite-results, #webkite-results.md, #webkite-results.xl{
   .until-md, .xs-only, .sm-only, .lg-only{display: none;}
+  .webkite-results-header .xs-only{display: none;}
   .md-only{display: inline-block;}
   td.md-only, th.md-only{display: table-cell;}
   th span.md-only{line-height: 0;}
