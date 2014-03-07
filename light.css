@@ -727,13 +727,13 @@
 #webkite-results.sm td.sm-only, #webkite-results.sm th.sm-only {
   display: table-cell; }
 
-#webkite-results.md .until-md, #webkite-results.md .xs-only, #webkite-results.md .sm-only, #webkite-results.md .lg-only {
+#webkite-results .until-md, #webkite-results .xs-only, #webkite-results .sm-only, #webkite-results .lg-only, #webkite-results.md .until-md, #webkite-results.md .xs-only, #webkite-results.md .sm-only, #webkite-results.md .lg-only, #webkite-results.xl .until-md, #webkite-results.xl .xs-only, #webkite-results.xl .sm-only, #webkite-results.xl .lg-only {
   display: none; }
-#webkite-results.md .md-only {
+#webkite-results .md-only, #webkite-results.md .md-only, #webkite-results.xl .md-only {
   display: inline-block; }
-#webkite-results.md td.md-only, #webkite-results.md th.md-only {
+#webkite-results td.md-only, #webkite-results th.md-only, #webkite-results.md td.md-only, #webkite-results.md th.md-only, #webkite-results.xl td.md-only, #webkite-results.xl th.md-only {
   display: table-cell; }
-#webkite-results.md th span.md-only {
+#webkite-results th span.md-only, #webkite-results.md th span.md-only, #webkite-results.xl th span.md-only {
   line-height: 0; }
 
 #webkite-results.lg .until-lg, #webkite-results.lg .xs-only, #webkite-results.lg .sm-only, #webkite-results.lg .md-only {
