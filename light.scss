@@ -717,7 +717,7 @@ $mainGutter: 1.25em;
 /***************************************  DISPLAY RULES */
 #webkite-results.xs{
   .until-xs, .until-sm, .sm-only, .md-only, .lg-only{display: none;}
-  .xs-only{display: inline-block;}
+  .xs-only, .webkite-results-header .xs-only{display: inline-block;}
   td.xs-only, th.xs-only{display: table-cell;}
   }
 #webkite-results.sm{

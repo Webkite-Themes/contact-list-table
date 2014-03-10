@@ -715,7 +715,7 @@
 /***************************************  DISPLAY RULES */
 #webkite-results.xs .until-xs, #webkite-results.xs .until-sm, #webkite-results.xs .sm-only, #webkite-results.xs .md-only, #webkite-results.xs .lg-only {
   display: none; }
-#webkite-results.xs .xs-only {
+#webkite-results.xs .xs-only, #webkite-results.xs .webkite-results-header .xs-only {
   display: inline-block; }
 #webkite-results.xs td.xs-only, #webkite-results.xs th.xs-only {
   display: table-cell; }
