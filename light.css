@@ -745,6 +745,12 @@
 #webkite-results.sm .webkite-filter-area {
   margin-left: 0;
   padding-left: 0; }
+#webkite-results.sm .webkite-item-details ul.forty {
+  max-width: 43%;
+  width: 43%; }
+#webkite-results.sm .webkite-item-details ul.sixty {
+  max-width: 55%;
+  width: 55%; }
 #webkite-results.sm .forty li b, #webkite-results.sm .forty li .facet-values, #webkite-results.sm .sixty li b, #webkite-results.sm .sixty li .facet-values {
   width: 100%; }
 #webkite-results.sm .forty li .webkite-toggle, #webkite-results.sm .sixty li .webkite-toggle {
