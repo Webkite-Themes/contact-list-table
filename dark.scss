@@ -53,6 +53,7 @@ $mainGutter: 1.25em;
 
   table{
     border: none;
+    border-collapse: separate;
     width: 100%;
     margin-bottom: $mainGutter;
     max-width: 100%;

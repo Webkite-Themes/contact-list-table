@@ -459,6 +459,7 @@
 /********************************************** BLOCKS */
 #webkite-results table {
   border: none;
+  border-collapse: separate;
   width: 100%;
   margin-bottom: 1.25em;
   max-width: 100%;
