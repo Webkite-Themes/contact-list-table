@@ -611,6 +611,13 @@
     vertical-align: top; }
   #webkite-results .webkite-item-details b {
     font-weight: 700; }
+  #webkite-results .webkite-item-details a.webkite-website {
+    display: inline-block;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 10em; }
 #webkite-results tr + tr > td {
   column-span: 5;
   -webkit-column-span: 5;
