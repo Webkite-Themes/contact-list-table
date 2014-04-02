@@ -173,8 +173,8 @@ $mainGutter: 1.25em;
       @include boxedUp;
       display: inline-block;
       vertical-align: top;
-      &.forty{max-width: 41%; width: 41%;}
-      &.sixty{max-width: 58%; width: 58%; padding-left: $mainGutter;}
+      &.forty{max-width: 39.5%; width: 39.5%;}
+      &.sixty{max-width: 59%; width: 59%; padding-left: $mainGutter;}
       }
       img{
       @include roundedUp(.325em);
