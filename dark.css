@@ -473,7 +473,7 @@
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  border: none;
+  border: 0px none;
   line-height: 1em;
   padding: 0.625em;
   vertical-align: middle; }
@@ -586,11 +586,11 @@
     display: inline-block;
     vertical-align: top; }
     #webkite-results .webkite-item-details ul.forty, #webkite-results .webkite-item-details div.forty {
-      max-width: 41%;
-      width: 41%; }
+      max-width: 39.5%;
+      width: 39.5%; }
     #webkite-results .webkite-item-details ul.sixty, #webkite-results .webkite-item-details div.sixty {
-      max-width: 58%;
-      width: 58%;
+      max-width: 59%;
+      width: 59%;
       padding-left: 1.25em; }
   #webkite-results .webkite-item-details img {
     -webkit-border-radius: 0.325em;
