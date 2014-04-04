@@ -80,9 +80,9 @@ $colorVariant:light;
       &:hover{color: $lightOpacity;}
       }
     }
+	td li b{margin-bottom: $mainGutter/2;}
   td a{
-    font-size: .875em;
-    &.webkite-address span, &.webkite-email{@include ellipsisThis;}
+    &.webkite-address span, &.webkite-email{@include ellipsisThis; line-height: 1.25em;}
     &.webkite-email{display: block;}
     }
     a.more-button, a.less-button{
@@ -147,7 +147,7 @@ $colorVariant:light;
       display: inline-block;
       width: 100%;
       }
-    span.address a > span{display: inline-block;}
+    span.address a > span{display: inline-block; width: 100%;}
     .city, .state{display: inline;}
     .city + .state:before{content: ", ";}
     }
