@@ -29,7 +29,8 @@
         {{#facet name="Image"}}<div class="image-thumbnail" style="background-image:url({{displayValue}});"></div>{{/facet}}
       </td>
       <td class="webkite-name">
-        <ul>
+	      <div class="content-wrapper">
+	        <ul>
           <li>
             {{#facet name="First Name"}}<h2>{{displayValue}} </h2>{{/facet}} 
             {{#facet name="Last Name"}}<h2>{{displayValue}}</h2>{{/facet}}
@@ -54,9 +55,11 @@
           	{{#facet name="Phone Number"}}<span class="facet-values"><a href="tel:{{displayValue}}">{{displayValue}}</a></span>{{/facet}}
         	</li>
         </ul>
+	      </div>
       </td>
       <td class="webkite-address until-xs">
-        <ul>
+      	<div class="content-wrapper">
+        	<ul>
         	<li>
         	  <b class="sm-only">address</b>
         	  <span class="facet-values address">
@@ -73,6 +76,7 @@
           	{{#facet name="Phone Number"}}<span class="facet-values"><a href="tel:{{displayValue}}">{{displayValue}}</a></span>{{/facet}}
         	</li>
         </ul>
+      	</div>
       </td>
       <td class="md-only">
         {{#facet name="Phone Number"}}<a href="tel:{{displayValue}}">{{displayValue}}</a>{{/facet}}

@@ -66,8 +66,7 @@ $colorVariant:dark;
     line-height: 1em;
     padding: $mainGutter/2;
     vertical-align: middle;
-    &.webkite-name{max-width: 10em;}
-    &.webkite-address{max-width: 10em;}
+    &.webkite-name .content-wrapper, &.webkite-address .content-wrapper{max-width: 10em;}
     }
   th.webkite-name, th.webkite-address{border-right: 2px groove $lightestOpacity;}
   th{
@@ -82,6 +81,7 @@ $colorVariant:dark;
     }
   td li b{margin-bottom: $mainGutter/2;}
   td a{
+  	font-size: .875em;
     &.webkite-address span, &.webkite-email{@include ellipsisThis; line-height: 1.25em;}
     &.webkite-email{display: block;}
     }
@@ -147,6 +147,8 @@ $colorVariant:dark;
       display: inline-block;
       width: 100%;
       }
+    .facet-values{font-size: .875em;}
+    .facet-values a{font-size: 1em;}
     span.address a > span{display: inline-block; width: 100%;}
     .city, .state{display: inline;}
     .city + .state:before{content: ", ";}
