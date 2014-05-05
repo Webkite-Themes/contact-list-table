@@ -2,6 +2,21 @@
 ---
 ##changelog
   
+###1.0.0
+
+* Head off list-style declarations
+* Update pagination to stay on one line
+* Remove ellipsis behavior from dark theme
+* Remove link to WebKite
+* Making details more aligned with cells above
+* Tweaking sizes and borders
+* Accommodate long URLs
+* Border collapse to kill cell borders on display change
+* Shrink non-link values
+* Compress all partials into one
+* Gradient fallback for IE
+* Persistent borders around inline filter buttons
+
 ###0.1.3
 
 * Disabled styles for pagination once you've reached the end or are at the beginning of a result set
