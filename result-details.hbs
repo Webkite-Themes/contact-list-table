@@ -1,147 +1,111 @@
 <td colspan="5">
-      <ul class="forty">
-        {{#facet name="Image"}}<img src="{{displayValue}}"/>{{/facet}}
-    	</ul>
-    	<ul class="sixty">
-        <li>
-          <b>website</b>
-          {{#facet name="Website"}}
-          <span class="facet-values">
-          <a class="webkite-website" href="{{displayValue}}">{{displayValue}}</a>
-          </span>
-          {{/facet}}
-        </li>
-        <li>
-          <b>twitter</b>
-          {{#facet name="Twitter"}}
-          <span class="facet-values">
-          <a href="https://twitter.com/{{displayValue}}">{{displayValue}}</a>
-          </span>
-          {{/facet}}
-        </li>
-        <li>
-          {{#facet name="University"}}
-            {{#if filterable}}
-            <b class="inline-filter-button">
-            <a class="webkite-toggle" data-target=".{{../../id}}-{{name}}-menu">{{downcase name}}<i></i></a>
-            <ul class="{{../../id}}-{{name}}-menu inline-filter-menu webkite-hide webkite-menu">
-              {{#each filterableValues}}
-              <li><a href="#" class="webkite-add-filter webkite-toggle" data-target=".{{../../../id}}-{{../name}}-menu" data-facet="{{../name}}" data-operator="is" data-value="{{this}}">{{this}}</a></li>
-            {{/each}}
-            </ul>
-            </b>
-          {{else}}
-            <b>{{downcase name}}</b>
-          {{/if}}
-          {{#if filterable}}
-          <span class="facet-values">
-          {{#each values}}
-          <a href="#" class="webkite-add-filter" data-facet="{{../name}}" data-operator="is" data-value="{{this}}">{{this}}</a>{{#unless @last}}, <br>{{/unless}}
-          {{/each}}
-          </span>
-          {{else}}
-          <span class="facet-values">
-          {{displayValue}}
-          </span>
-          {{/if}}
-          {{/facet}}
-        </li>
-        <li>
-          {{#facet name="Degree"}}
-          {{#if filterable}}
+  <ul class="forty">
+    {{#facet name="Image"}}<img src="{{displayValue}}"/>{{/facet}}
+  </ul>
+  <ul class="sixty">
+    {{#facet name="Website"}}
+      <li>
+        <b>website</b>
+        <span class="facet-values"><a class="webkite-website" href="{{displayValue}}">{{displayValue}}</a></span>
+      </li>
+    {{/facet}}
+    {{#facet name="Twitter"}}
+      <li>
+        <b>twitter</b>
+        <span class="facet-values"><a href="https://twitter.com/{{displayValue}}">{{displayValue}}</a></span>
+      </li>
+    {{/facet}}
+    {{#facet name="University"}}
+      <li>
+        {{#if filterable}}
           <b class="inline-filter-button">
             <a class="webkite-toggle" data-target=".{{../../id}}-{{name}}-menu">{{downcase name}}<i></i></a>
             <ul class="{{../../id}}-{{name}}-menu inline-filter-menu webkite-hide webkite-menu">
               {{#each filterableValues}}
-              <li><a href="#" class="webkite-add-filter webkite-toggle" data-target=".{{../../../id}}-{{../name}}-menu" data-facet="{{../name}}" data-operator="is" data-value="{{this}}">{{this}}</a></li>
-            {{/each}}
+                <li><a href="#" class="webkite-add-filter webkite-toggle" data-target=".{{../../../id}}-{{../name}}-menu" data-facet="{{../name}}" data-operator="is" data-value="{{this}}">{{this}}</a></li>
+              {{/each}}
             </ul>
           </b>
-          {{else}}
-            <b>{{downcase name}}</b>
-          {{/if}}
-          {{#if filterable}}
           <span class="facet-values">
-          {{#each values}}
-          <a href="#" class="webkite-add-filter" data-facet="{{../name}}" data-operator="is" data-value="{{this}}">{{this}}</a>{{#unless @last}}, <br>{{/unless}}
-          {{/each}}
+            {{#each values}}<a href="#" class="webkite-add-filter" data-facet="{{../name}}" data-operator="is" data-value="{{this}}">{{this}}</a>{{#unless @last}}, <br>{{/unless}}{{/each}}
           </span>
-          {{else}}
-          <span class="facet-values">
-          {{displayValue}}
-          </span>
-          {{/if}}
-          {{/facet}}
-        </li>
-        <li>
-          <b>year of graduation</b>
-          {{#facet name="Year of Graduation"}}
-          <span class="facet-values">
-          {{displayValue}}
-          </span>
-          {{/facet}}
-        </li>
-        <li>
-          {{#facet name="Employer"}}
-          {{#if filterable}}
+        {{else}}
+          <b>{{downcase name}}</b>
+          <span class="facet-values">{{displayValue}}</span>
+        {{/if}}
+      </li>
+    {{/facet}}
+    {{#facet name="Degree"}}
+      <li>
+        {{#if filterable}}
           <b class="inline-filter-button">
             <a class="webkite-toggle" data-target=".{{../../id}}-{{name}}-menu">{{downcase name}}<i></i></a>
             <ul class="{{../../id}}-{{name}}-menu inline-filter-menu webkite-hide webkite-menu">
               {{#each filterableValues}}
-              <li><a href="#" class="webkite-add-filter webkite-toggle" data-target=".{{../../../id}}-{{../name}}-menu" data-facet="{{../name}}" data-operator="is" data-value="{{this}}">{{this}}</a></li>
-            {{/each}}
+                <li><a href="#" class="webkite-add-filter webkite-toggle" data-target=".{{../../../id}}-{{../name}}-menu" data-facet="{{../name}}" data-operator="is" data-value="{{this}}">{{this}}</a></li>
+              {{/each}}
             </ul>
           </b>
-          {{else}}
-            <b>{{downcase name}}</b>
-          {{/if}}
-          {{#if filterable}}
           <span class="facet-values">
-          {{#each values}}
-          <a href="#" class="webkite-add-filter" data-facet="{{../name}}" data-operator="is" data-value="{{this}}">{{this}}</a>{{#unless @last}}, <br>{{/unless}}
-          {{/each}}
+            {{#each values}}<a href="#" class="webkite-add-filter" data-facet="{{../name}}" data-operator="is" data-value="{{this}}">{{this}}</a>{{#unless @last}}, <br>{{/unless}}{{/each}}
           </span>
-          {{else}}
-          <span class="facet-values">
-          {{displayValue}}
-          </span>
-          {{/if}}
-          {{/facet}}
-        </li>
-        <li>
-          {{#facet name="Department"}}
-          {{#if filterable}}
+        {{else}}
+          <b>{{downcase name}}</b>
+          <span class="facet-values">{{displayValue}}</span>
+        {{/if}}
+      </li>
+    {{/facet}}
+    {{#facet name="Year of Graduation"}}
+      <li>
+        <b>year of graduation</b>
+        <span class="facet-values">{{displayValue}}</span>
+      </li>
+    {{/facet}}
+    {{#facet name="Employer"}}
+      <li>
+        {{#if filterable}}
           <b class="inline-filter-button">
             <a class="webkite-toggle" data-target=".{{../../id}}-{{name}}-menu">{{downcase name}}<i></i></a>
             <ul class="{{../../id}}-{{name}}-menu inline-filter-menu webkite-hide webkite-menu">
               {{#each filterableValues}}
-              <li><a href="#" class="webkite-add-filter webkite-toggle" data-target=".{{../../../id}}-{{../name}}-menu" data-facet="{{../name}}" data-operator="is" data-value="{{this}}">{{this}}</a></li>
-            {{/each}}
+                <li><a href="#" class="webkite-add-filter webkite-toggle" data-target=".{{../../../id}}-{{../name}}-menu" data-facet="{{../name}}" data-operator="is" data-value="{{this}}">{{this}}</a></li>
+              {{/each}}
             </ul>
           </b>
-          {{else}}
-            <b>{{downcase name}}</b>
-          {{/if}}
-          {{#if filterable}}
           <span class="facet-values">
-          {{#each values}}
-          <a href="#" class="webkite-add-filter" data-facet="{{../name}}" data-operator="is" data-value="{{this}}">{{this}}</a>{{#unless @last}}, <br>{{/unless}}
-          {{/each}}
+            {{#each values}}<a href="#" class="webkite-add-filter" data-facet="{{../name}}" data-operator="is" data-value="{{this}}">{{this}}</a>{{#unless @last}}, <br>{{/unless}}{{/each}}
           </span>
-          {{else}}
+        {{else}}
+          <b>{{downcase name}}</b>
+          <span class="facet-values">{{displayValue}}</span>
+        {{/if}}
+      </li>
+    {{/facet}}
+    {{#facet name="Department"}}
+      <li>
+        {{#if filterable}}
+          <b class="inline-filter-button">
+            <a class="webkite-toggle" data-target=".{{../../id}}-{{name}}-menu">{{downcase name}}<i></i></a>
+            <ul class="{{../../id}}-{{name}}-menu inline-filter-menu webkite-hide webkite-menu">
+              {{#each filterableValues}}
+                <li><a href="#" class="webkite-add-filter webkite-toggle" data-target=".{{../../../id}}-{{../name}}-menu" data-facet="{{../name}}" data-operator="is" data-value="{{this}}">{{this}}</a></li>
+              {{/each}}
+            </ul>
+          </b>
           <span class="facet-values">
-          {{displayValue}}
+            {{#each values}}<a href="#" class="webkite-add-filter" data-facet="{{../name}}" data-operator="is" data-value="{{this}}">{{this}}</a>{{#unless @last}}, <br>{{/unless}}{{/each}}
           </span>
-          {{/if}}
-          {{/facet}}
-        </li>
-        <li>
-          <b>job title</b>
-          {{#facet name="Job Title"}}
-          <span class="facet-values">
-          {{displayValue}}
-          </span>
-          {{/facet}}
-        </li>
-      </ul>
-  	</td><!-- webkite-item-details -->
+        {{else}}
+          <b>{{downcase name}}</b>
+          <span class="facet-values">{{displayValue}}</span>
+        {{/if}}
+      </li>
+    {{/facet}}
+    {{#facet name="Job Title"}}
+      <li>
+        <b>job title</b>
+        <span class="facet-values">{{displayValue}}</span>
+      </li>
+    {{/facet}}
+  </ul>
+</td><!-- webkite-item-details -->
